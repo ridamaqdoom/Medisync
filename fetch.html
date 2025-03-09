@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediSync | Dr. Alex River</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      color: #333;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f7fa 100%);
+      padding: 20px;
+    }
+    /* Profile Container */
+    .profile-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .profile-container h2 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+    .profile-container p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    /* Search Container */
+    .search-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .search-container h3 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+    .search-container select, .search-container input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .search-container button {
+      width: 80%;
+      padding: 10px;
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .search-container button:hover {
+      background-color: #276f2a;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #555;
+    }
+    .view-data-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .view-data-btn:hover {
+      background-color: #276f2a;
+    }
+  </style>
+</head>
+<body>
+  <!-- Profile Section -->
+  <div class="profile-container">
+    <h2>Welcome, Dr. Alex River</h2>
+    <p>Position: Doctor at MediSync Hospital</p>
+    <p>Province: Ontario</p>
+  </div>
+
+  <!-- Search Section -->
+  <div class="search-container">
+    <h3>Search for Patient Data</h3>
+    <select id="province">
+      <option value="">Select Province</option>
+      <option value="Ontario">Ontario</option>
+      <option value="Quebec">Quebec</option>
+      <option value="British Columbia">British Columbia</option>
+      <!-- Add more provinces as needed -->
+    </select>
+    <input type="text" id="patientName" placeholder="Enter Patient Name" required>
+    <input type="date" id="dob" placeholder="Date of Birth" required>
+    <select id="gender">
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+    <button onclick="searchPatient()">Search</button>
+    <div id="result" class="result"></div>
+    <button id="viewDataBtn" class="view-data-btn" onclick="viewPatientData()"> <a href="data.html"> View Data </a></button>
+  </div>
+
+  <script>
+    function searchPatient() {
+      const province = document.getElementById('province').value;
+      const patientName = document.getElementById('patientName').value;
+      const dob = document.getElementById('dob').value;
+      const gender = document.getElementById('gender').value;
+      const result = document.getElementById('result');
+      const viewDataBtn = document.getElementById('viewDataBtn');
+
+      if (province && patientName && dob && gender) {
+        // Simulate fetching patient data
+        result.textContent = `Fetching data for ${patientName} in ${province}...`;
+        setTimeout(() => {
+          result.textContent = `Patient data for ${patientName} in ${province} retrieved successfully.`;
+          viewDataBtn.style.display = 'inline-block';
+        }, 2000);
+      } else {
+        result.textContent = 'Please fill in all fields.';
+        viewDataBtn.style.display = 'none';
+      }
+    }
+
+    function viewPatientData() {
+      alert('Displaying health data for the selected patient.');
+    }
+  </script>
+</body>
+</html>

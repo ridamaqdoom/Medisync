@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediSync | Login</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      color: #333;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f7fa 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /* Login Container */
+    .login-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+    .login-container h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .login-container button:hover {
+      background-color: #276f2a;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to MediSync</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()"><a href="fetch.html">Login</a></button>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const message = document.getElementById('message');
+
+      if (username === 'Alex_river' && password === 'alexriver') {
+        message.style.color = '#2e7d32';
+        message.textContent = 'Welcome, Dr. Alex River! You are logged in as a doctor.';
+      } else {
+        message.style.color = '#d32f2f';
+        message.textContent = 'Invalid username or password. Please try again.';
+      }
+    }
+  </script>
+</body>
+</html>

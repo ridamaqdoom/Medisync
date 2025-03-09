@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Score Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e8f5e9;
+            margin: 0;
+        }
+        .dashboard {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        .header {
+            font-size: 24px;
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 18px;
+        }
+        .data-row span {
+            display: flex;
+            align-items: center;
+        }
+        .eco-score {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 25px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background-color: #66bb6a;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4caf50;
+        }
+        .icon {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">Eco Score Dashboard</div>
+        <div class="data-row">
+            <span><span class="icon">✅</span>Cache Hits:</span>
+            <span id="cacheHits">0</span>
+        </div>
+        <div class="data-row">
+            <span><span class="icon">❌</span>Cache Misses:</span>
+            <span id="cacheMisses">0</span>
+        </div>
+        <div class="eco-score">
+            MediSync has saved <span id="ecoScore">0.00</span> kWh!
+        </div>
+        <div class="button-container">
+            <button onclick="simulateCacheHit()">Simulate Cache Hit</button>
+            <button onclick="simulateCacheMiss()">Simulate Cache Miss</button>
+        </div>
+    </div>
+
+    <script>
+        let cacheHits = 0;
+        let cacheMisses = 0;
+        const coefficient = 0.05; // Energy saved per cache hit in kWh
+
+        function simulateCacheHit() {
+            cacheHits++;
+            updateDashboard();
+        }
+
+        function simulateCacheMiss() {
+            cacheMisses++;
+            updateDashboard();
+        }
+
+        function updateDashboard() {
+            document.getElementById('cacheHits').textContent = cacheHits;
+            document.getElementById('cacheMisses').textContent = cacheMisses;
+            const ecoScore = (cacheHits * coefficient).toFixed(2);
+            document.getElementById('ecoScore').textContent = ecoScore;
+        }
+    </script>
+</body>
+</html>

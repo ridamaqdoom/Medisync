@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediSync | Patient Health Data</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      color: #333;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f7fa 100%);
+      padding: 20px;
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.9);
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #2e7d32;
+      font-size: 18px;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #276f2a;
+    }
+    .navbar .icon {
+      margin-right: 8px;
+    }
+    /* Health Data Container */
+    .health-data-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .health-data-container h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .section h3 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section p {
+      font-size: 16px;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+    .section table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .section table, .section th, .section td {
+      border: 1px solid #ccc;
+    }
+    .section th, .section td {
+      padding: 10px;
+      text-align: left;
+    }
+    .section th {
+      background-color: #f0f0f0;
+    }
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .button {
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 14px;
+    }
+    .button:hover {
+      background-color: #276f2a;
+    }
+    .form-container {
+      display: none;
+      margin-top: 10px;
+    }
+    .form-container input {
+      width: calc(33% - 20px);
+      padding: 8px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+     <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="home.html"><span class="icon">🏠</span>Home</a>
+    <a href="login.html"><span class="icon">🔑</span>Login</a>
+  </nav>
+  <!-- Health Data Section -->
+  <div class="health-data-container">
+    <h2>Patient Health Data</h2>
+
+    <!-- Personal Information -->
+    <div class="section">
+      <h3>Personal Information</h3>
+      <img src="2.avif" alt="Patient Picture" class="profile-picture">
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Date of Birth:</strong> January 15, 1985</p>
+      <p><strong>Gender:</strong> Male</p>
+      <p><strong>Province:</strong> Ontario</p>
+      <button class="button" onclick="toggleEdit('personalInfoForm')">Edit</button>
+      <div id="personalInfoForm" class="form-container">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Date of Birth">
+        <input type="text" placeholder="Gender">
+        <input type="text" placeholder="Province">
+      </div>
+    </div>
+
+    <!-- Medical History -->
+    <div class="section">
+      <h3>Medical History <button class="button" onclick="toggleEdit('medicalHistoryForm')">Edit</button></h3>
+      <p>John has a history of hypertension and type 2 diabetes. He underwent knee surgery in 2018.</p>
+      <div id="medicalHistoryForm" class="form-container">
+        <input type="text" placeholder="Add Medical History">
+      </div>
+    </div>
+
+    <!-- Current Medications -->
+    <div class="section">
+      <h3>
+        Current Medications 
+        <button class="button" onclick="toggleEdit('medicationsForm')">Add/Edit</button>
+      </h3>
+      <table>
+        <tr>
+          <th>Medication</th>
+          <th>Dosage</th>
+          <th>Frequency</th>
+        </tr>
+        <tr>
+          <td>Metformin</td>
+          <td>500 mg</td>
+          <td>Twice a day</td>
+        </tr>
+        <tr>
+          <td>Lisinopril</td>
+          <td>10 mg</td>
+          <td>Once a day</td>
+        </tr>
+      </table>
+      <div id="medicationsForm" class="form-container">
+        <input type="text" placeholder="Medication">
+        <input type="text" placeholder="Dosage">
+        <input type="text" placeholder="Frequency">
+      </div>
+    </div>
+
+    <!-- Recent Lab Results -->
+    <div class="section">
+      <h3>
+        Recent Lab Results 
+        <button class="button" onclick="toggleEdit('labResultsForm')">Add/Edit</button>
+      </h3>
+      <table>
+        <tr>
+          <th>Test</th>
+          <th>Result</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td>Blood Glucose</td>
+          <td>7.2 mmol/L</td>
+          <td>March 10, 2023</td>
+        </tr>
+        <tr>
+          <td>Cholesterol</td>
+          <td>5.5 mmol/L</td>
+          <td>March 10, 2023</td>
+        </tr>
+      </table>
+      <div id="labResultsForm" class="form-container">
+        <input type="text" placeholder="Test">
+        <input type="text" placeholder="Result">
+        <input type="text" placeholder="Date">
+      </div>
+    </div>
+
+    <!-- Upcoming Appointments -->
+    <div class="section">
+      <h3>
+        Upcoming Appointments 
+        <button class="button" onclick="toggleEdit('appointmentsForm')">Add/Edit</button>
+      </h3>
+      <p><strong>Dr. Smith:</strong> April 15, 2023, at 10:00 AM</p>
+      <p><strong>Cardiologist:</strong> May 20, 2023, at 2:00 PM</p>
+      <div id="appointmentsForm" class="form-container">
+        <input type="text" placeholder="Doctor Name">
+        <input type="text" placeholder="Date">
+        <input type="text" placeholder="Time">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleEdit(formId) {
+      const form = document.getElementById(formId);
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
