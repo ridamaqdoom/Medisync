@@ -139,7 +139,7 @@
       <h3>Personal Information</h3>
       <img src="2.avif" alt="Patient Picture" class="profile-picture">
       <p><strong>Name:</strong> John Doe</p>
-      <p><strong>Date of Birth:</strong> January 15, 1985</p>
+      <p><strong>Date of Birth/Age:</strong> January 15, 1945 (80 years)</p>
       <p><strong>Gender:</strong> Male</p>
       <p><strong>Province:</strong> Ontario</p>
       <button class="button" onclick="toggleEdit('personalInfoForm')">Edit</button>
@@ -153,8 +153,10 @@
 
     <!-- Medical History -->
     <div class="section">
-      <h3>Medical History <button class="button" onclick="toggleEdit('medicalHistoryForm')">Edit</button></h3>
-      <p>John has a history of hypertension and type 2 diabetes. He underwent knee surgery in 2018.</p>
+      <h3>AI-Generated Health Summary <button class="button" onclick="toggleEdit('medicalHistoryForm')">Edit</button></h3>
+      <p>Patient has a medical history of <b>hypertension</b> and <b>type 2 diabetes</b> and underwent <b>knee surgery in 2018</b>. His current medications include <b>Metformin (500 mg twice daily)</b> for diabetes management and <b>Lisinopril (10 mg once daily)</b> for hypertension. Recent lab results from <b>March 10, 2023</b>, indicate <b>elevated blood glucose levels (7.2 mmol/L)</b> and <b>high cholesterol</b>. Despite the introduction of <b>Lisinopril in April 2023</b>, cholesterol levels remained high, prompting dietary recommendations in June.</p>
+
+
       <div id="medicalHistoryForm" class="form-container">
         <input type="text" placeholder="Add Medical History">
       </div>
@@ -220,6 +222,47 @@
       </div>
     </div>
 
+    <!-- Early Signs of Disease -->
+    <div class="section">
+        <h3>AI-Detected Early Signs of Disease</h3>
+        <p>⚠️ High cholesterol detected → Increased risk of cardiovascular disease.</p>
+        <p>⚠️ Elevated blood glucose → Potential diabetes complications.</p>
+      </div>
+
+          <!-- Potential Health Risks -->
+      <div class="section">
+        <h3>Potential Health Risks</h3>
+        <p>🔴 Cardiovascular Risk: High cholesterol + hypertension history.</p>
+        <p>🔴 Diabetes Progression: Rising glucose levels suggest stricter management required.</p>
+      </div>
+
+      <div class="section chart-container">
+        <h3>AI-Powered Timeline of Health Trends</h3>
+        <svg width="400" height="200">
+          <line x1="50" y1="150" x2="150" y2="100" stroke="blue" stroke-width="2"></line>
+          <line x1="150" y1="100" x2="250" y2="120" stroke="blue" stroke-width="2"></line>
+          <line x1="250" y1="120" x2="350" y2="140" stroke="red" stroke-width="2"></line>
+          <circle cx="50" cy="150" r="5" fill="blue"></circle>
+          <circle cx="150" cy="100" r="5" fill="blue"></circle>
+          <circle cx="250" cy="120" r="5" fill="blue"></circle>
+          <circle cx="350" cy="140" r="5" fill="red"></circle>
+          <text x="30" y="170" font-size="12">Mar 2023</text>
+          <text x="130" y="90" font-size="12">Apr 2023</text>
+          <text x="230" y="130" font-size="12">June 2023</text>
+          <text x="320" y="160" font-size="12">Aug 2023</text>
+        </svg>
+        <p>🟢 March 2023: High cholesterol detected (5.5 mmol/L).</p>
+        <p>🟡 April 2023: New medication prescribed (Lisinopril).</p>
+        <p>🔴 June 2023: No improvement detected → Suggest dietary changes.</p>
+        <p>🔴 Aug 2023: No improvement detected and Pain Reported.</p>
+      </div>
+      <div class="conclusion-box">
+        <h4>Conclusion</h4>
+        <p>The patient's cholesterol levels remained high despite medication (Lisinopril) prescribed in April 2023. By June 2023, no improvement was detected, leading to a recommendation for dietary changes. This suggests that medication alone was not sufficient, and additional lifestyle modifications are necessary to manage cholesterol levels effectively.</p>
+      </div>
+
+      <br>
+
     <!-- Upcoming Appointments -->
     <div class="section">
       <h3>
@@ -234,6 +277,11 @@
         <input type="text" placeholder="Time">
       </div>
     </div>
+
+    <div class="section">
+        <h3>Patient Consent</h3>
+        <p>The patient has provided consent for the collection and use of medical data for treatment, diagnosis, and healthcare management. All personal and medical information will be handled in accordance with privacy regulations and will only be shared with authorized healthcare professionals</p>
+      </div>
   </div>
 
   <script>
