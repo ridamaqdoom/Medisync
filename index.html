@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediSync | Secure, Sustainable Healthcare Data Sharing</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      color: #333;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f7fa 100%);
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Navigation Bar */
+    .navbar {
+      width: 100%;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.9);
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .navbar h1 {
+      font-size: 28px;
+      color: #2e7d32;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .navbar li {
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .navbar li:hover {
+      color: #2e7d32;
+    }
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 80px;
+      animation: fadeIn 2s ease-out;
+    }
+    .hero h1 {
+      font-size: 60px;
+      color: #2e7d32;
+      margin-bottom: 20px;
+      animation: slideIn 1.5s ease-out;
+    }
+    .hero h2 {
+      font-size: 50px;
+      color: #2e7d32;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      animation: fadeInUp 1s ease-out;
+    }
+    .hero .cta-btn {
+      font-size: 20px;
+      padding: 15px 30px;
+      background-color: #2e7d32;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    .hero .cta-btn:hover {
+      background-color: #276f2a;
+      transform: scale(1.05);
+    }
+    /* Features Section */
+    .features {
+      background-color: #fff;
+      padding: 70px 50px;
+      text-align: center;
+    }
+    .features h3 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #2e7d32;
+    }
+    .features .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .feature {
+      max-width: 300px;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      transition: box-shadow 0.3s;
+      background-color: #f9fafb;
+      animation: fadeIn 1s ease-out;
+    }
+    .feature:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .feature h4 {
+      margin-bottom: 15px;
+      color: #385d4a;
+    }
+    .feature p {
+      font-size: 16px;
+      color: #555;
+    }
+    /* Eco Score Demo Section */
+    .eco-demo {
+      background-color: #e8f5e9;
+      padding: 60px 50px;
+      text-align: center;
+    }
+    .eco-demo h3 {
+      font-size: 36px;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+    .eco-container {
+      background: #fff;
+      margin: 20px auto;
+      padding: 30px;
+      max-width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .eco-container p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Footer */
+    .footer {
+      background-color: #2e7d32;
+      color: #fff;
+      padding: 15px 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <h1>MediSync</h1>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#eco-demo">Eco Impact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>MediSync</h1>
+    <h2>Seamless, Secure Healthcare Data Sharing</h2>
+    <p>MediSync is a Bill-C72 compliant, interoperable platform that connects healthcare providers across Canada, ensuring data privacy and sustainability.</p>
+    <button class="cta-btn" onclick="alert('Join us for a revolution in healthcare data sharing!')"><a href="register.html">Get Started</a></button>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <h3>Our Cutting-Edge Features</h3>
+    <div class="feature-list">
+      <div class="feature">
+        <h4>Secure Data Sharing</h4>
+        <p>Using FHIR and state-of-the-art encryption, patient data is securely transmitted and remains within provincial boundaries.</p>
+      </div>
+      <div class="feature">
+        <h4>Predictive Analysis</h4>
+        <p>Leverage AI to provide proactive health insights and personalized interventions for better patient outcomes.</p>
+      </div>
+      <div class="feature">
+        <h4>Eco-Friendly Deployment</h4>
+        <p>Hosted on green cloud platforms, MediSync minimizes its environmental footprint with renewable energy.</p>
+      </div>
+      <div class="feature">
+        <h4>Smart Caching & Eco Score</h4>
+        <p>Efficient caching reduces redundant data transfers, and our Eco Score demonstrates the energy savings we achieve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eco Score Demo Section -->
+  <section id="eco-demo" class="eco-demo">
+    <h3>MediSync’s Eco Impact</h3>
+    <div class="eco-container">
+      <p>Every time we reuse data, we save energy and reduce our carbon footprint.</p>
+      <p><strong>Eco Score:</strong> 12.34 kWh Saved</p>
+      <button onclick="alert('Eco Score details coming soon!')" style="padding:10px 20px; border:none; background:#2e7d32; color:#fff; border-radius:5px; cursor:pointer;"><a href="d.html">Learn More </a></button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2023 MediSync. All Rights Reserved.
+  </footer>
+</body>
+</html>
