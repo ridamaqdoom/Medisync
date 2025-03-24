@@ -81,11 +81,9 @@
       <!-- Add more provinces as needed -->
     </select>
     <input type="text" id="doctorName" placeholder="Enter Doctor's Name" required>
-    <textarea id="patientData" rows="4" placeholder="Enter Patient Data" required></textarea>
-    <div class="file-upload-container">
-        <label for="patientFile">Attach Patient File:</label>
-        <input type="file" id="patientFile" class="file-upload" accept=".pdf,.doc,.docx,.txt">
-      </div>
+    <input type="text" id="patientName" placeholder="Enter Patient Name" required>
+    <input type="text" id="patientID" placeholder="Enter Patient Health ID" required>
+    <textarea id="Comments" rows="4" placeholder="Enter Additional Patient Info" required></textarea>
     <button onclick="sendData()">Send Data</button>
     <div id="result" class="result"></div>
   </div>
