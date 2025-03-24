@@ -286,14 +286,39 @@
 
       <br>
 
+
+      <div class="section">
+        <h3>AI-Supported Clinical Decision Flow</h3>
+        <p>📈 <strong>New Lab Alert (March 2025):</strong> Elevated creatinine levels → Potential kidney strain.</p>
+      
+        <p>🧠 <strong>AI System Recommendation:</strong></p>
+        <ul>
+          <li>🚩 Lisinopril flagged for possible contribution to declining kidney function.</li>
+          <li>Suggested reviewing ACE inhibitor use due to recent renal function trends.</li>
+          <li>Identified an alternative: Amlodipine (calcium channel blocker) with no adverse renal interaction.</li>
+          <li>Checked recent clinical guidelines (Canadian Hypertension Education Program 2024): Amlodipine suitable as a second-line agent in diabetic patients with reduced renal function.</li>
+          <li>Cross-checked with patient's allergy records: No known allergy to Amlodipine.</li>
+          <li>💊 Suggested alternative: Amlodipine 5 mg daily — safer renal profile, effective for blood pressure control.</li>
+
+          <li>Allergy check: No contraindications or previous reactions to Amlodipine.</li>
+        </ul>
+        
+      
+        <p>📚 <strong>Source References:</strong> Clinical trial from *The Lancet*, 2023; CHAMP guideline database; UpToDate drug interaction module.</p>
+      
+        <p>✅ <strong>Suggested Plan:</strong> Discontinue Lisinopril gradually over 7 days. Begin Amlodipine 5 mg daily, monitor blood pressure and creatinine weekly.</p>
+      
+      </div>
+      
+
     <!-- Upcoming Appointments -->
     <div class="section">
       <h3>
         Upcoming Appointments 
         <button class="button" onclick="toggleEdit('appointmentsForm')">Add/Edit</button>
       </h3>
-      <p><strong>Dr. Smith:</strong> April 15, 2023, at 10:00 AM</p>
-      <p><strong>Cardiologist:</strong> May 20, 2023, at 2:00 PM</p>
+      <p><strong>Dr. Smith(Cardiologist):</strong> April 15, 2023, at 10:00 AM</p>
+
       <div id="appointmentsForm" class="form-container">
         <input type="text" placeholder="Doctor Name">
         <input type="text" placeholder="Date">
@@ -301,12 +326,82 @@
       </div>
     </div>
 
-    <div class="section">
-        <h3>Patient Consent</h3>
-        <p>The patient has provided consent for the collection and use of medical data for treatment, diagnosis, and healthcare management. All personal and medical information will be handled in accordance with privacy regulations and will only be shared with authorized healthcare professionals</p>
-      </div>
+
+    
+
+            <!-- Request Information from Other Health Organizations -->
+<!-- Request Information from Other Health Organizations -->
+<div class="section">
+  <h3>Requests from Other Health Organizations</h3>
+  <table>
+    <tr>
+      <th>Request Type</th>
+      <th>Source</th>
+      <th>Province</th>
+      <th>Status/Notes</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>Patient History</td>
+      <td>BC General Hospital</td>
+      <td> British Columbia </td>
+      <td>Information received and updated on Feb 4, 2025</td>
+      <td><button class="button">View and add to profile</button></td>
+    </tr>
+    <tr>
+      <td>Blood Reports</td>
+      <td>Manitoba Health Services</td>
+      <td> Manitoba </td>
+      <td>Done on Feb 9, 2025</td>
+      <td><button class="button">Request Reports</button></td>
+    </tr>
+    <tr>
+      <td>Prescription Summary</td>
+      <td>Manitoba Health Services</td>
+      <td> Manitoba </td>
+      <td>Outgoing request – Ready to send</td>
+      <td><button class="button">Send Reports</button></td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="section">
+  <h3>Patient Consent</h3>
+  <p>
+    The patient has provided consent for the collection and use of medical data for treatment, diagnosis, and healthcare management. All personal and medical information will be handled in accordance with privacy regulations and will only be shared with authorized healthcare professionals.
+  </p>
+
+  <table>
+    <tr>
+      <th>Form Type</th>
+      <th>Date Signed</th>
+      <th>Authorized Scope</th>
+    </tr>
+    <tr>
+      <td>General Medical Consent</td>
+      <td>Jan 5, 2024</td>
+      <td>Treatment, Diagnosis, Health Monitoring</td>
+    </tr>
+    <tr>
+      <td>Data Sharing Consent</td>
+      <td>Jan 5, 2024</td>
+      <td>Sharing with Authorized Canadian Health Organizations</td>
+    </tr>
+    <tr>
+      <td>AI-Assisted Decision Consent</td>
+      <td>Jan 7, 2024</td>
+      <td>Use of AI tools in treatment planning</td>
+    </tr>
+  </table>
+</div>
+
   </div>
 
+
+
+
+   
   <script>
     function toggleEdit(formId) {
       const form = document.getElementById(formId);
